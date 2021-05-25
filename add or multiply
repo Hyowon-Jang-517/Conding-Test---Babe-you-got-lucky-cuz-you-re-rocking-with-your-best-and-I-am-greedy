@@ -1,0 +1,31 @@
+n=int(input())
+b = 0      #n이 몇 자리수인지 담을 변수
+if n> 0:
+  b=1
+  
+a=n
+
+while a//10 >= 1:
+    a = a // 10
+    b+=1
+
+n_list = [0 for i in range (b)]
+
+for i in range(b):
+  n_list[b-(i+1)] = n%10
+  n //= 10
+
+sum=n_list[0]
+
+if n_list[1] == 0 or sum ==1 or n_list[1] == 1:
+  sum += n_list[1]
+else:
+  sum *= n_list[1]         #처음 두 수에 대해서 처리
+
+for i in range (2,b):
+  if n_list[i] == 0 or n_list[i] == 1:
+    sum+=n_list[i]
+  else:
+    sum *= n_list[i]
+
+print(sum)
