@@ -1,0 +1,16 @@
+n , m = map(int,input().split())
+data = list(map(int,input().split()))
+amount = [0 for i in range(m)]
+
+for i in range(0,m):
+    amount[i] = data.count(i+1)
+count = 0
+for i in range(m):
+    for j in range(i+1,m):
+        if i == j:
+            
+            continue
+        else:
+          count += amount[i]*amount[j]
+
+print(count)
