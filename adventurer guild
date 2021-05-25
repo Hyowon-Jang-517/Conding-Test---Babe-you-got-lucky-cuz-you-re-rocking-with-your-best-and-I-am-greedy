@@ -1,12 +1,12 @@
 n = int(input())
 adventurers = list(map(int,input().split()))
 adventurers.sort()
-i=0
+i=0                 #최소 공포도 모험가의 인덱스
 group=0
 while True:
-  max_ad = adventurers[i]
-  if i + max_ad<n:
-    i += max_ad
+  min_ad = adventurers[i] #(최소)공포도 만큼 인원을 한 그룹에 배정한다.
+  if i + min_ad<n: #인원이 넘어가지 않는 선에서 그룹을 만든다.
+    i += min_ad    #그룹을 만들고 남는 모험가들중 가장 작은 인덱스
     group +=1
   else:
     break
