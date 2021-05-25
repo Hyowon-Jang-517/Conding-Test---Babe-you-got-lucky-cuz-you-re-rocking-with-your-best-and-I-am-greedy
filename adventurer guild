@@ -1,0 +1,15 @@
+n = int(input())
+adventurers = list(map(int,input().split()))
+adventurers.sort()
+i=0
+group=0
+while True:
+  max_ad = adventurers[i]
+  if i + max_ad<n:
+    i += max_ad
+    group +=1
+  else:
+    break
+
+print(group)
+  
